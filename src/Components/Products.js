@@ -7,7 +7,6 @@ const Products = ({ showFeatured }) => {
   const dispatch = useDispatch();
   const [marterialId, setmarterialId] = useState("")
   const [productColorId, setproductColorId] = useState("")
-
   const productListings = useSelector((state) => state?.data?.products);
   const productColors = useSelector((state) => state?.data?.colors);
   const productMatrials = useSelector((state) => state?.data?.materials);
@@ -32,7 +31,14 @@ const Products = ({ showFeatured }) => {
   const handleColorFilter = (id) => {
     setproductColorId(id)
   }
+  const itemsPerPage = 3
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = Math.ceil(productListings.length / itemsPerPage);
+  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const productsToDisplay = productListings.slice(startIndex, endIndex);
   return (
     <>
       <div className="row mt-5">
@@ -71,7 +77,7 @@ const Products = ({ showFeatured }) => {
         </div>
         <div className="col-sm-10">
           <div className="row container">
-            {productListings?.map((iteam, index) => {
+            {productsToDisplay?.map((iteam, index) => {
               const maeterial = productMatrials?.find(maeterial => maeterial.id === iteam.materialId);
               const color = productColors?.find((color => color.id === iteam.colorId))
               const isFeatured = featuredProdcuts?.some(featuredItem => featuredItem.productId === iteam.id);
@@ -100,9 +106,44 @@ const Products = ({ showFeatured }) => {
                 </div>
               </>
             })}
-
           </div>
         </div>
+
+      </div>
+      <div className="d-flex align-items-center justify-content-center">
+        <ul className="pagination pagination-sm">
+          <li className={`page-item px-2 d-none ${currentPage === 1 ? "disabled" : ""}`}>
+            <button
+              className="page-link"
+              onClick={() => setCurrentPage(currentPage - 1)}
+              disabled={currentPage === 1}
+            >
+              Previous
+            </button>
+          </li>
+          {pageNumbers.map((pageNumber) => (
+            <li
+              key={pageNumber}
+              className={`page-item  px-1 ${pageNumber === currentPage ? "active" : ""}`}
+            >
+              <button
+                className="circle page-link"
+                onClick={() => setCurrentPage(pageNumber)}
+              >
+                {pageNumber}
+              </button>
+            </li>
+          ))}
+          <li className={`page-item px-1 d-none ${currentPage === totalPages ? "disabled" : ""}`}>
+            <button
+              className="page-link"
+              onClick={() => setCurrentPage(currentPage + 1)}
+              disabled={currentPage === totalPages}
+            >
+              Next
+            </button>
+          </li>
+        </ul>
       </div>
     </>
   );

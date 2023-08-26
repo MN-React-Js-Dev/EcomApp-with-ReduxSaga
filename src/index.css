@@ -187,3 +187,27 @@ ul li p a {
 .footer .copyright p {
   border-top: 1px solid rgba(255, 255, 255, .1);
 }
+
+.circle {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 4px;
+  background: #fff;
+  border: 2px solid #D9D9D9;
+  color: #000;
+  font-weight: 600;
+}
+
+.active .page-link {
+  border: 2px solid #D9D9D9;
+  background: #D9D9D9;
+  color: black;
+  border: none;
+}
+
+.page-link:focus{
+  border: 2px solid #D9D9D9;
+
+}
+ 
