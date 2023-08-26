@@ -1,0 +1,189 @@
+@font-face {
+  font-family: Nunito_Sans;
+  src: url(../public/assets/fonts/NunitoSans-Regular.ttf);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Nunito_Sans;
+  overflow-x: hidden;
+}
+
+.cst-navbar-img {
+  background-image: url("../public/assets/Images/headersection.jpg");
+  background-repeat: no-repeat;
+  background-color: lightgray;
+  background-size: cover;
+  height: 600px;
+}
+
+.all-product {
+  color: #fff !important;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.feature-products {
+  color: #fff !important;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.cst-navbar-brand span {
+  color: #bfbebe;
+  text-align: center;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.cst-navbar-brand {
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.latest-style {
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.yesrday-price {
+  color: #fff;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.browse-all-style {
+  border-radius: 10px;
+  background: #ca4022;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border: none;
+}
+
+.cst-card {
+  border: none;
+  background: white;
+
+}
+
+.ansdjfnajsdf {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.all-cst {
+  display: flex;
+  height: 122px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.add-to-cart-btn {
+  display: none;
+  /* Hide the button by default */
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 152px;
+  font-size: 15px;
+  border: 2px solid rgb(217, 217, 217);
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 10px 0;
+  background-color: rgb(217, 217, 217);
+  z-index: 1;
+}
+
+.cst-card:hover .add-to-cart-btn {
+  display: block;
+  /* Show the button on card hover */
+}
+
+.add-to-cart-btn:hover {
+  color: black;
+  cursor: pointer;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: white;
+}
+
+ul li span {
+  cursor: pointer;
+}
+
+ul li {
+  cursor: pointer;
+  list-style-type: none;
+}
+
+ul li p a {
+  text-decoration: none;
+}
+
+/* FOOTER CSS */
+
+.footer {
+  background: #1e1e1e;
+  color: white;
+}
+
+.footer .links ul {
+  list-style-type: none;
+}
+
+.footer .links li a {
+  color: white;
+  transition: color 0.2s;
+}
+
+.footer .links li a:hover {
+  text-decoration: none;
+  color: #4180cb;
+}
+
+.footer .about-company i {
+  font-size: 25px;
+}
+
+.footer .about-company a {
+  color: white;
+  transition: color 0.2s;
+}
+
+.footer .about-company a:hover {
+  color: #4180cb;
+}
+
+.footer .location i {
+  font-size: 18px;
+}
+
+.footer .copyright p {
+  border-top: 1px solid rgba(255, 255, 255, .1);
+}
